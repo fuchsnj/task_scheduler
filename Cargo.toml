@@ -1,0 +1,6 @@
+[package]
+name = "task_scheduler"
+version = "0.1.0"
+authors = ["Nathan Fox <fuchsnj@gmail.com>"]
+
+[dependencies]
