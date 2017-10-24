@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/fuchsnj/task_scheduler.svg?branch=master)](https://travis-ci.org/fuchsnj/task_scheduler)
 # Task Scheduler
 
 A library to easily schedule an FnOnce to run sometime in the future.
