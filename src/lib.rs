@@ -79,7 +79,7 @@ impl Scheduler {
 		}
 	}
 
-	pub fn after_instant<F>(&mut self, instant: Instant, func: F)
+	pub fn after_instant<F>(&self, instant: Instant, func: F)
 		where F: FnOnce() + Send + 'static {
 		let mut func = Some(func);
 		self.data.callbacks.lock().unwrap().push(Entry {
@@ -93,7 +93,7 @@ impl Scheduler {
 		self.data.cond_var.notify_all();
 	}
 
-	pub fn after_duration<F>(&mut self, duration: Duration, func: F)
+	pub fn after_duration<F>(&self, duration: Duration, func: F)
 		where F: FnOnce() + Send + 'static {
 		self.after_instant(Instant::now() + duration, func)
 	}
@@ -104,7 +104,7 @@ fn test() {
 	use std::sync::atomic::{AtomicBool, Ordering};
 
 	let atomic = Arc::new(AtomicBool::new(false));
-	let mut scheduler = Scheduler::new();
+	let scheduler = Scheduler::new();
 	{
 		let atomic = atomic.clone();
 		scheduler.after_instant(Instant::now() + Duration::from_millis(10), move || {
