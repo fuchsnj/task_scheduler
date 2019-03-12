@@ -1,6 +1,7 @@
 [package]
 name = "task_scheduler"
 version = "0.1.0"
+edition = "2018"
 authors = ["Nathan Fox <fuchsnj@gmail.com>"]
 readme = "README.md"
 repository = "https://github.com/fuchsnj/task_scheduler"
