@@ -10,4 +10,7 @@ description = """
 A library to easilty schedule an FnOnce to run in the future
 """
 
+[badges]
+travis-ci = { repository = "fuchsnj/task_scheduler" }
+
 [dependencies]
